@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCategories } from "../../Redux/selectors/sidebar-selector";
-import { getCategories } from "../../Redux/sidebar-reducer";
+import { selectCategories } from "../../../Redux/selectors/sidebar-selector";
+import { getCategories } from "../../../Redux/sidebar-reducer";
 import { Category } from "./Categories/Category";
 import s from './Sidebar.module.scss';
 

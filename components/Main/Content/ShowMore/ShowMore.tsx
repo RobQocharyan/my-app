@@ -1,7 +1,7 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  showMore } from "../../../Redux/main-reducer";
-import { selectId } from "../../../Redux/selectors/selector";
+import {  showMore } from "../../../../Redux/main-reducer";
+import { selectId } from "../../../../Redux/selectors/selector";
 import s from "./ShowMore.module.scss";
 
 export const ShowMore: FC = React.memo(() => {

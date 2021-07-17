@@ -1,12 +1,12 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { actions, getImages } from "../../../Redux/main-reducer";
-import { selectId, selectImages } from "../../../Redux/selectors/selector";
+import { actions, getImages } from "../../../../Redux/main-reducer";
+import { selectId, selectImages } from "../../../../Redux/selectors/selector";
 import { Image } from "../Image/Images";
-import s from "./TiesPage.module.scss";
+import s from "./HatsPage.module.scss";
 
-export const TiesPage: FC = React.memo(() => {
+export const HatsPage: FC = React.memo(() => {
   const dispatch = useDispatch();
   const history = useHistory();
   const imagesData = useSelector(selectImages);
@@ -16,8 +16,8 @@ export const TiesPage: FC = React.memo(() => {
   const id = Number(pathName.slice(1));
 
   useEffect(() => {
-    dispatch(getImages(Number(id)));
-  }, [dispatch]);
+    dispatch(getImages(pageId));
+  }, []);
 
   if (!imagesData) {
     return <div>...loading</div>;
@@ -32,8 +32,10 @@ export const TiesPage: FC = React.memo(() => {
   });
 
   return (
-    <div className={s.tiesPage}>
-      <div className={s.images}>{images}</div>
-    </div>
+    <div className={s.hatsPage}>
+    <div className={s.images}>
+      {images}
+      </div>
+  </div>
   );
 });

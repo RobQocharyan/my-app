@@ -1,8 +1,8 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { actions, getImages } from "../../../Redux/main-reducer";
-import { selectId, selectImages } from "../../../Redux/selectors/selector";
+import { actions, getImages } from "../../../../Redux/main-reducer";
+import { selectId, selectImages } from "../../../../Redux/selectors/selector";
 import { Image } from "../Image/Images";
 import s from "./SinksPage.module.scss";
 

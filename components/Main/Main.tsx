@@ -1,8 +1,8 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getImages } from "../../Redux/main-reducer";
-import { Content } from "../Content/Content";
-import { Sidebar } from "../Sidebar/Sidebar";
+import { Content } from "../Main/Content/Content";
+import { Sidebar } from "../Main/Sidebar/Sidebar";
 import s from './Main.module.scss';
 
 export const Main: FC = React.memo(() => {

@@ -1,10 +1,7 @@
 import React, { FC } from "react";
-import { useSelector } from "react-redux";
 import { Route } from "react-router-dom";
-import { selectImages } from "../../Redux/selectors/selector";
 import { BoxesPage } from "./BoxesPage/BoxesPage";
 import s from './Content.module.scss';
-import { Image } from "./Image/Images";
 import {ClotesPage} from './ClotesPage/ClotesPage'
 import { HatsPage } from "./HatsPage/HatsPage";
 import { SinksPage } from "./SinksPage/SinksPage";

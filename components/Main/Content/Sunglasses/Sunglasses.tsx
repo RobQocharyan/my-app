@@ -1,30 +1,31 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { actions, getImages } from "../../../Redux/main-reducer";
-import { selectId, selectImages } from "../../../Redux/selectors/selector";
+import { actions, getImages } from "../../../../Redux/main-reducer";
+import { selectId, selectImages } from "../../../../Redux/selectors/selector";
 import { Image } from "../Image/Images";
-import s from "./HatsPage.module.scss";
+import s from './Sunglasses.module.scss';
 
-export const HatsPage: FC = React.memo(() => {
+export const Sunglasses: FC = React.memo(() => {
+
   const dispatch = useDispatch();
   const history = useHistory();
   const imagesData = useSelector(selectImages);
-  const pageId = useSelector(selectId);
+  const pageId = useSelector(selectId)
 
   const pathName = history.location.pathname;
   const id = Number(pathName.slice(1));
 
   useEffect(() => {
-    dispatch(getImages(pageId));
-  }, []);
+    dispatch(getImages(Number(id)));
+  }, [dispatch]);
 
   if (!imagesData) {
     return <div>...loading</div>;
   }
 
-  if (id) {
-    dispatch(actions.setId(id));
+  if(id) {
+    dispatch(actions.setId(id))
   }
 
   const images = imagesData?.map((i) => {
@@ -32,10 +33,10 @@ export const HatsPage: FC = React.memo(() => {
   });
 
   return (
-    <div className={s.hatsPage}>
-    <div className={s.images}>
+    <div className={s.sunglasses}>
+      <div className={s.images}>
       {images}
       </div>
-  </div>
-  );
-});
+    </div>
+  )
+})
