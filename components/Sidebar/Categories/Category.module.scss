@@ -1,0 +1,10 @@
+.catogory {
+  a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    &.active {
+      margin: 0 0 0 10px;
+    }
+  }
+}
