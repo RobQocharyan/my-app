@@ -31,7 +31,7 @@ export const main_reducer = (state = initialState, action: ActionType): InitialS
     case 'CLEAN_IMAGES':
       return {
         ...state,
-        images: []
+        images: null
       }
     default:
       return state
