@@ -1,0 +1,19 @@
+.sidebar {
+  width: 10%;
+  min-height: 500px;
+  border: 1px solid silver;
+  background-color: white;
+  .categories {
+    margin: 20px 0 0 30px;
+    position: fixed;
+    @media screen and (max-width: 1400px) {
+      font-size: 12px;
+    }
+    @media screen and (max-width: 1100px) {
+      font-size: 10px;
+    }
+    @media screen and (max-width: 900px) {
+      font-size: 8px;
+    }
+  }
+}

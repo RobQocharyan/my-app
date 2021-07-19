@@ -9,7 +9,7 @@ type CategoryPropsType = {
 
 export const Category: FC<CategoryPropsType> = React.memo(({ name, id }) => {
   return (
-    <div className={s.catogory}>
+    <div className={s.category}>
       <NavLink activeClassName={s.active} to={`${id}`}>
         {name}
       </NavLink>

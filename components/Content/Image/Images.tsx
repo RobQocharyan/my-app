@@ -11,7 +11,7 @@ type ImagesPropsType = {
 export const Image: FC<ImagesPropsType> = React.memo(({height, width, url}) => {
   return (
     <div className={s.image}>
-      <img src={url} alt="img" />
+      <img height={height} width={width} src={url} alt="img" />
     </div>
   )
 })

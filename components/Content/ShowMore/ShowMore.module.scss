@@ -1,0 +1,21 @@
+.showMore {
+    text-align: center;
+    margin: 30px 0;
+    button {
+        padding: 15px;
+        font-size: 18px;
+        background: green;
+        color: white;
+        border-radius: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover {
+            background: white;
+            color: black;
+        }
+        @media screen and (max-width: 1400px) {
+            font-size: 14px;
+            padding: 10px;
+        }
+    }
+}

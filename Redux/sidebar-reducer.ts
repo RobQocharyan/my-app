@@ -12,10 +12,10 @@ type InitialStateType = typeof initialState
 
 export const sidebar_reducer = (state = initialState, action: ActionType ): InitialStateType => {
   switch(action.type) {
-    case'CATEGORIES_RECEIVED':
+    case 'CATEGORIES_RECEIVED':
     return {
       ...state,
-      categories: action.payload.categoreis
+      categories: action.payload.categories
     }
     default:
       return state
@@ -24,15 +24,14 @@ export const sidebar_reducer = (state = initialState, action: ActionType ): Init
 
 
 const actions = {
-  categoreis_received: (categoreis: CategoryType[]) => 
-  ({type: 'CATEGORIES_RECEIVED', payload: {categoreis}} as const)
+  categories_received: (categories: CategoryType[]) => 
+  ({type: 'CATEGORIES_RECEIVED', payload: {categories}} as const)
 }
 
 export const getCategories = () => {
   return async (dispatch: Dispatch<ActionType>) => {
     const data = await api.getCategories()
-    debugger
-    dispatch(actions.categoreis_received(data))
+    dispatch(actions.categories_received(data))
   }
 }
 

@@ -1,23 +1,28 @@
 import React from "react";
-import "./App.css";
-import { Header } from "./components/Header/Header";
-import { Main } from "./components/Main/Main";
-import { store } from "./Redux/store";
-import { HashRouter } from "react-router-dom";
-import { Provider } from 'react-redux'
+import s from "./App.module.scss";
+import { Route } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import { Sidebar } from "./components/Sidebar/Sidebar";
+import { selectCategories } from "./Redux/selectors/sidebar-selector";
+import { Content } from "./components/Content/Content";
 
 function App() {
 
+  const categoriesData = useSelector(selectCategories)
+  const categories = categoriesData?.map((c) => {
+    return <Route path={`/${c.id}`} render={() => {
+      return <Content />
+    }} />
+  })
+
+
   return (
-      <HashRouter>
-       <Provider store={store}>
-        <div className="App">
-          <Header />
-          <Main />
-        </div>
-        </Provider>
-      </HashRouter>
-   
+    <div className={s.App}>
+      <Sidebar />
+      <div className={s.content}>
+        {categories}
+      </div>
+    </div>
   );
 }
 
