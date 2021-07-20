@@ -4,7 +4,7 @@
   border: 1px solid silver;
   background-color: white;
   .categories {
-    margin: 20px 0 0 30px;
+    margin: 20px 0 0 20px;
     position: fixed;
     @media screen and (max-width: 1400px) {
       font-size: 12px;
@@ -12,8 +12,80 @@
     @media screen and (max-width: 1100px) {
       font-size: 10px;
     }
-    @media screen and (max-width: 900px) {
-      font-size: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 80px;
+    .menu {
+      position: fixed;
+      top: 0px;
+      left: -120%;
+      width: 100%;
+      overflow: auto;
+      height: 100%;
+      background-color: cadetblue;
+      transition: 1s;
+      padding: 70px 0px 0px 30px;
+      .list {
+        display: flex;
+        flex-direction: column;
+        left: -10px;
+        display: inline-block;
+        .link {
+          a {
+            outline: 0px solid red;
+            font-size: 25px;
+            color: white;
+          }
+        }
+      }
+    }
+    .menu.active {
+      left: 0;
+    }
+    .burger {
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      position: relative;
+      z-index: 4;
+      span {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        height: 2px;
+        background: black;
+      }
+    }
+    .burger::before,
+    .burger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: black;
+      transition: 0.5s;
+    }
+    .burger::before {
+      top: 0;
+    }
+    .burger::after {
+      bottom: 0;
+    }
+    .burger.active::before {
+      transform: rotate(45deg);
+      top: 12px;
+    }
+    .burger.active::after {
+      transform: rotate(-45deg);
+      bottom: 25px;
+    }
+    .burger.active {
+      span {
+        transform: scale(0);
+      }
     }
   }
 }

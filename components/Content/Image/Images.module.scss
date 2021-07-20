@@ -4,15 +4,17 @@
   padding: 5px;
   outline: 0px solid red;
   @media screen and (max-width: 1400px) {
-    font-size: 10px;
     max-width: calc(33% - 10px);
     min-width: calc(33% - 10px);
   }
   @media screen and (max-width: 768px) {
-    font-size: 10px;
-    padding: 3px;
+    padding: 2px;
     max-width: calc(50% - 6px);
     min-width: calc(50% - 6px);
+  }
+  @media screen and (max-width: 320px) {
+    max-width: calc(100% - 6px);
+    min-width: calc(100% - 6px);
   }
   img {
     width: 100%;
